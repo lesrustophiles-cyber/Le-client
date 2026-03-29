@@ -1,0 +1,10 @@
+on(press){
+   if(!_parent.ValorC)
+   {
+      _parent.ColorNombre(true);
+   }
+   else
+   {
+      _parent.ColorNombre(false);
+   }
+}

@@ -1,0 +1,2 @@
+count++;
+gotoAndPlay(spin);
