@@ -52,21 +52,50 @@ _loc1.createChildren = function()
 };
 _loc1.initLayout = function()
 {
-   var _loc2_ = 24;
-   this._winBg = this.attachMovie("Window","_winBg",this.getNextHighestDepth(),{_x:170,_y:62,_width:460,_height:365});
-   this._winBg.title = "BOSS DONJON";
-   this._ldrBossArtwork = this.attachMovie("Loader","_ldrBossArtwork",this.getNextHighestDepth(),{_x:190,_y:95,_width:190,_height:190,scaleContent:true,autoLoad:false});
-   this._lblBossName = this.attachMovie("Label","_lblBossName",this.getNextHighestDepth(),{_x:394,_y:115,_width:215,_height:_loc2_});
+   var _loc3_ = this.getNextHighestDepth();
+   this._winBg = this.attachMovie("Window","_winBg",_loc3_,{_x:152,_y:40,_width:495,_height:390});
+   this._winBg.title = "BOSS DE DONJON";
+   _loc3_ = this.getNextHighestDepth();
+   this._mcRetroBg = this.createEmptyMovieClip("_mcRetroBg",_loc3_);
+   this._mcRetroBg._x = 173;
+   this._mcRetroBg._y = 83;
+   this.drawPanel(this._mcRetroBg,453,275,3029575,7368816,100);
+   _loc3_ = this.getNextHighestDepth();
+   this._ldrBossArtwork = this.attachMovie("Loader","_ldrBossArtwork",_loc3_,{_x:188,_y:95,_width:220,_height:220,scaleContent:true,autoLoad:false});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblBossName = this.attachMovie("Label","_lblBossName",_loc3_,{_x:417,_y:104,_width:214,_height:25,text:"-"});
    this._lblBossName.styleName = "DungeonBossNameLabel";
-   this._lblBossLevel = this.attachMovie("Label","_lblBossLevel",this.getNextHighestDepth(),{_x:394,_y:145,_width:215,_height:_loc2_});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblBossLevel = this.attachMovie("Label","_lblBossLevel",_loc3_,{_x:417,_y:132,_width:214,_height:22,text:"-"});
    this._lblBossLevel.styleName = "DungeonBossValueLabel";
-   this._lblStasisValue = this.attachMovie("Label","_lblStasisValue",this.getNextHighestDepth(),{_x:202,_y:301,_width:400,_height:_loc2_});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblTier = this.attachMovie("Label","_lblTier",_loc3_,{_x:417,_y:160,_width:214,_height:20,text:"-"});
+   this._lblTier.styleName = "DungeonBossTierLabel";
+   _loc3_ = this.getNextHighestDepth();
+   this._lblStasisValue = this.attachMovie("Label","_lblStasisValue",_loc3_,{_x:188,_y:325,_width:430,_height:20,text:"0 / 0"});
    this._lblStasisValue.styleName = "DungeonBossValueLabel";
-   this._pbStasis = this.attachMovie("ProgressBar","_pbStasis",this.getNextHighestDepth(),{_x:202,_y:328,_width:400,_height:14});
-   this._lblMarker25 = this.attachMovie("Label","_lblMarker25",this.getNextHighestDepth(),{_x:284,_y:343,_width:50,_height:18,text:"25%"});
-   this._lblMarker50 = this.attachMovie("Label","_lblMarker50",this.getNextHighestDepth(),{_x:384,_y:343,_width:50,_height:18,text:"50%"});
-   this._lblMarker75 = this.attachMovie("Label","_lblMarker75",this.getNextHighestDepth(),{_x:484,_y:343,_width:50,_height:18,text:"75%"});
-   this._btnClose = this.attachMovie("Button","_btnClose",this.getNextHighestDepth(),{_x:534,_y:386,_width:72,_height:24,label:this.api.lang.getText("CLOSE")});
+   _loc3_ = this.getNextHighestDepth();
+   this._pbStasis = this.attachMovie("ProgressBar","_pbStasis",_loc3_,{_x:188,_y:348,_width:430,_height:13});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblMarker25 = this.attachMovie("Label","_lblMarker25",_loc3_,{_x:285,_y:360,_width:36,_height:15,text:"25"});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblMarker50 = this.attachMovie("Label","_lblMarker50",_loc3_,{_x:392,_y:360,_width:36,_height:15,text:"50"});
+   _loc3_ = this.getNextHighestDepth();
+   this._lblMarker75 = this.attachMovie("Label","_lblMarker75",_loc3_,{_x:500,_y:360,_width:36,_height:15,text:"75"});
+   _loc3_ = this.getNextHighestDepth();
+   this._btnClose = this.attachMovie("Button","_btnClose",_loc3_,{_x:544,_y:392,_width:74,_height:24,label:this.api.lang.getText("CLOSE")});
+};
+_loc1.drawPanel = function(mcTarget, nWidth, nHeight, nColor, nBorderColor, nAlpha)
+{
+   mcTarget.clear();
+   mcTarget.lineStyle(2,nBorderColor,100);
+   mcTarget.beginFill(nColor,nAlpha);
+   mcTarget.moveTo(0,0);
+   mcTarget.lineTo(nWidth,0);
+   mcTarget.lineTo(nWidth,nHeight);
+   mcTarget.lineTo(0,nHeight);
+   mcTarget.lineTo(0,0);
+   mcTarget.endFill();
 };
 _loc1.addListeners = function()
 {
@@ -74,6 +103,15 @@ _loc1.addListeners = function()
 };
 _loc1.initData = function()
 {
+   this.applyBossData(this._nBossGfxId,this._sBossName,this._nBossLevel,this._nCurrentStasis,this._nMaxStasis);
+};
+_loc1.applyBossData = function(nBossGfxId, sBossName, nBossLevel, nCurrentStasis, nMaxStasis)
+{
+   this._nBossGfxId = Number(nBossGfxId);
+   this._sBossName = sBossName == undefined || sBossName.length == 0 ? "Boss inconnu" : sBossName;
+   this._nBossLevel = Math.max(1,Number(nBossLevel));
+   this._nMaxStasis = Math.max(1,Number(nMaxStasis));
+   this._nCurrentStasis = Math.max(0,Math.min(this._nMaxStasis,Number(nCurrentStasis)));
    this._lblBossName.text = this._sBossName;
    this._lblBossLevel.text = this.api.lang.getText("LEVEL") + " " + this._nBossLevel;
    this._lblStasisValue.text = "Stasis : " + this._nCurrentStasis + " / " + this._nMaxStasis;
@@ -92,19 +130,27 @@ _loc1.updateGaugeColor = function()
    if(_loc2_ < 25)
    {
       this._pbStasis.styleName = "StasisGaugeGreen";
+      this._lblTier.text = "Palier I - Menace faible";
    }
    else if(_loc2_ < 50)
    {
       this._pbStasis.styleName = "StasisGaugeYellow";
+      this._lblTier.text = "Palier II - Menace modérée";
    }
    else if(_loc2_ < 75)
    {
       this._pbStasis.styleName = "StasisGaugeOrange";
+      this._lblTier.text = "Palier III - Menace élevée";
    }
    else
    {
       this._pbStasis.styleName = "StasisGaugeRed";
+      this._lblTier.text = "Palier IV - Menace extrême";
    }
+};
+_loc1.updateFromServer = function(nBossGfxId, sBossName, nBossLevel, nCurrentStasis, nMaxStasis)
+{
+   this.applyBossData(nBossGfxId,sBossName,nBossLevel,nCurrentStasis,nMaxStasis);
 };
 _loc1.click = function(oEvent)
 {

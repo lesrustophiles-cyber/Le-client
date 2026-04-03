@@ -43,6 +43,7 @@ _global.ank.gapi.styles["\x11\x05"].StasisGaugeOrange = {bgcolor:5327420,upcolor
 _global.ank.gapi.styles["\x11\x05"].StasisGaugeRed = {bgcolor:5327420,upcolor:14680064};
 _global.ank.gapi.styles["\x11\x05"].DungeonBossNameLabel = {labelfont:"Font2",labelembedfonts:false,labelalign:"left",labelsize:18,labelcolor:16776960,labelbold:false,labelitalic:false};
 _global.ank.gapi.styles["\x11\x05"].DungeonBossValueLabel = {labelfont:"Font1",labelembedfonts:false,labelalign:"left",labelsize:12,labelcolor:16777215,labelbold:false,labelitalic:false};
+_global.ank.gapi.styles["\x11\x05"].DungeonBossTierLabel = {labelfont:"Font1",labelembedfonts:false,labelalign:"left",labelsize:11,labelcolor:16763955,labelbold:false,labelitalic:false};
 _global.ank.gapi.styles["\x11\x05"].ToolTip = {font:"_sans",embedfonts:false,size:10,color:16777215,bold:false,italic:false,bgcolor:0,bgalpha:70};
 _global.ank.gapi.styles["\x11\x05"].PopupMenu = {bordercolor:16777215,backgroundcolor:5327420,foregroundcolor:14012330,itembgcolor:5327420,itemovercolor:16737792,itemstaticbgcolor:5327420,labelstaticstyle:"Label",labelenabledstyle:"Label",labeldisabledstyle:"Label"};
 _global.ank.gapi.styles["\x11\x05"].VolumeSlider = {oncolor:16777215,offcolor:13421772};
