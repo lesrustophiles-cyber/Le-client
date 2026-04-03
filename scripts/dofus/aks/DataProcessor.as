@@ -1777,6 +1777,24 @@ _loc1.postProcess = function(sType, sAction, bError, sData)
                      break;
                   case "G":
                      this.api.ui.getUIComponent("Ruleta").ganador(sData.substr(3));
+                     break;
+                  case "B":
+                     _loc38_ = sData.substr(3).split(";");
+                     this.api.ui.loadUIComponent("DungeonBoss","DungeonBoss",{bossGfxId:Number(_loc38_[0]),bossName:_loc38_[1],bossLevel:Number(_loc38_[2]),currentStasis:Number(_loc38_[3]),maxStasis:Number(_loc38_[4])});
+                     break;
+                  case "b":
+                     _loc38_ = sData.substr(3).split(";");
+                     if(this.api.ui.getUIComponent("DungeonBoss") != undefined)
+                     {
+                        this.api.ui.getUIComponent("DungeonBoss").updateFromServer(Number(_loc38_[0]),_loc38_[1],Number(_loc38_[2]),Number(_loc38_[3]),Number(_loc38_[4]));
+                     }
+                     else
+                     {
+                        this.api.ui.loadUIComponent("DungeonBoss","DungeonBoss",{bossGfxId:Number(_loc38_[0]),bossName:_loc38_[1],bossLevel:Number(_loc38_[2]),currentStasis:Number(_loc38_[3]),maxStasis:Number(_loc38_[4])});
+                     }
+                     break;
+                  case "C":
+                     this.api.ui.unloadUIComponent("DungeonBoss");
                }
                break;
             case "S":

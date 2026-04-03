@@ -37,6 +37,13 @@ _global.ank.gapi.styles["\x11\x05"].VIPToolTip = {font:"_sans",embedfonts:false,
 _global.ank.gapi.styles["\x11\x05"].loadStylePackage(dofus["\r\x13"].gapi.styles["\x10\x13"]);
 _global.ank.gapi.styles["\x11\x05"].Window = {titlestyle:"Label",cornerradius:{tl:13,tr:13,br:13,bl:13},bordercolor:16777215,borderwidth:3,backgroundcolor:14012330,titlecolor:5327420,titleheight:22};
 _global.ank.gapi.styles["\x11\x05"].ProgressBar = {bgcolor:5327420,upcolor:16737792};
+_global.ank.gapi.styles["\x11\x05"].StasisGaugeGreen = {bgcolor:5327420,upcolor:39219};
+_global.ank.gapi.styles["\x11\x05"].StasisGaugeYellow = {bgcolor:5327420,upcolor:16771840};
+_global.ank.gapi.styles["\x11\x05"].StasisGaugeOrange = {bgcolor:5327420,upcolor:16744448};
+_global.ank.gapi.styles["\x11\x05"].StasisGaugeRed = {bgcolor:5327420,upcolor:14680064};
+_global.ank.gapi.styles["\x11\x05"].DungeonBossNameLabel = {labelfont:"Font2",labelembedfonts:false,labelalign:"left",labelsize:18,labelcolor:16776960,labelbold:false,labelitalic:false};
+_global.ank.gapi.styles["\x11\x05"].DungeonBossValueLabel = {labelfont:"Font1",labelembedfonts:false,labelalign:"left",labelsize:12,labelcolor:16777215,labelbold:false,labelitalic:false};
+_global.ank.gapi.styles["\x11\x05"].DungeonBossTierLabel = {labelfont:"Font1",labelembedfonts:false,labelalign:"left",labelsize:11,labelcolor:16763955,labelbold:false,labelitalic:false};
 _global.ank.gapi.styles["\x11\x05"].ToolTip = {font:"_sans",embedfonts:false,size:10,color:16777215,bold:false,italic:false,bgcolor:0,bgalpha:70};
 _global.ank.gapi.styles["\x11\x05"].PopupMenu = {bordercolor:16777215,backgroundcolor:5327420,foregroundcolor:14012330,itembgcolor:5327420,itemovercolor:16737792,itemstaticbgcolor:5327420,labelstaticstyle:"Label",labelenabledstyle:"Label",labeldisabledstyle:"Label"};
 _global.ank.gapi.styles["\x11\x05"].VolumeSlider = {oncolor:16777215,offcolor:13421772};
