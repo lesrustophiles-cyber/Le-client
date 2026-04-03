@@ -81,6 +81,7 @@ _loc1.registerAllClasses = function()
    Object.registerClass("Loader",ank.gapi.controls.Loader);
    Object.registerClass("UI_MakeReport",dofus["\r\x13"].gapi.ui.MakeReport);
    Object.registerClass("UI_MakeMimibiote",dofus["\r\x13"].gapi.ui.MakeMimibiote);
+   Object.registerClass("UI_DungeonBoss",dofus["\r\x13"].gapi.ui.DungeonBoss);
    Object.registerClass("UI_EditPlayer",dofus["\r\x13"].gapi.ui.EditPlayer);
    Object.registerClass("UI_ChooseReward",dofus["\r\x13"].gapi.ui.ChooseReward);
    Object.registerClass("ItemViewerEffects",dofus["\r\x13"].gapi.controls.ItemViewer);
